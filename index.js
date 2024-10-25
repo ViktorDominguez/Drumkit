@@ -11,7 +11,8 @@ for (var i = 0; i < qbuttons; i++) {
 document.querySelectorAll("button")[i].addEventListener("click",function(){
     //alert("Anonimuous function");
 
-    var letter = this.innerHTML; 
+    var letter = this.innerHTML;
+    animation(letter);
     playThis(letter);
     
 });
@@ -19,7 +20,9 @@ document.querySelectorAll("button")[i].addEventListener("click",function(){
 
 document.addEventListener("keydown",
     function(event){
+        animation(event.key);
         playThis(event.key);
+    
     }
 );
 
@@ -61,7 +64,13 @@ function playThis(x){
     }
 }
 
-
+function animation(keypressed){
+    var y = document.querySelector("."+keypressed);
+    y.classList.add("pressed");
+    setTimeout(function(){
+        y.classList.remove("pressed");
+    },100);
+}
 
 
 /*
