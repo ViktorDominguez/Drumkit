@@ -12,42 +12,56 @@ document.querySelectorAll("button")[i].addEventListener("click",function(){
     //alert("Anonimuous function");
 
     var letter = this.innerHTML; 
+    playThis(letter);
+    
+});
+}
 
-    switch (letter) {
-        case "T1":
+document.addEventListener("keydown",
+    function(event){
+        playThis(event.key);
+    }
+);
+
+
+
+function playThis(x){
+
+    switch (x) {
+        case "t":
         var tom1 = new Audio("./sounds/tom-1.mp3");
         tom1.play();
         break;
-        case "T2":
+        case "y":
         var tom2 = new Audio("./sounds/tom-2.mp3");
         tom2.play();
         break;
-        case "T3":
+        case "u":
         var tom3 = new Audio("./sounds/tom-3.mp3");
         tom3.play();
         break;
-        case "T4":
+        case "i":
         var tom4 = new Audio("./sounds/tom-4.mp3");
         tom4.play();
         break;
-        case "S":
+        case "s":
         var snare = new Audio("./sounds/snare.mp3");
         snare.play();
         break;
-        case "K":
+        case "k":
         var kick = new Audio("./sounds/kick-bass.mp3");
         kick.play();
         break;
-        case "H":
+        case "h":
         var crash = new Audio("./sounds/crash.mp3");
         crash.play();
         break;
         default:
             break;
     }
-    
-});
 }
+
+
 
 
 /*
